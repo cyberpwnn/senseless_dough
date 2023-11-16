@@ -6,8 +6,6 @@ import 'dough.dart';
 import 'dough_controller.dart';
 import 'draggable.dart';
 import 'draggable_recipe.dart';
-import 'gyro.dart';
-import 'gyro_recipe.dart';
 
 /// Inherited settings for [Dough] widgets. Use this to override
 /// the default [Dough] settings.
@@ -15,10 +13,10 @@ import 'gyro_recipe.dart';
 class DoughRecipe extends StatelessWidget {
   /// Creates a [DoughRecipe] widget.
   const DoughRecipe({
-    Key? key,
     required this.child,
+    super.key,
     this.data,
-  }) : super(key: key);
+  });
 
   /// The fallback recipe.
   static final DoughRecipeData _kFallbackRecipe = DoughRecipeData.fallback();
@@ -80,7 +78,6 @@ class DoughRecipeData extends Equatable {
     Duration? exitDuration,
     Curve? exitCurve,
     DraggableDoughPrefs? draggablePrefs,
-    GyroDoughPrefs? gyroPrefs,
   }) {
     return DoughRecipeData.raw(
       viscosity: viscosity ?? 7000,
@@ -93,7 +90,6 @@ class DoughRecipeData extends Equatable {
       exitDuration: exitDuration ?? const Duration(milliseconds: 500),
       exitCurve: exitCurve ?? Curves.elasticIn,
       draggablePrefs: draggablePrefs ?? DraggableDoughPrefs.fallback(),
-      gyroPrefs: gyroPrefs ?? GyroDoughPrefs.fallback(),
     );
   }
 
@@ -109,7 +105,6 @@ class DoughRecipeData extends Equatable {
     required this.exitDuration,
     required this.exitCurve,
     required this.draggablePrefs,
-    required this.gyroPrefs,
   });
 
   /// Creates the fallback recipe.
@@ -153,9 +148,6 @@ class DoughRecipeData extends Equatable {
   /// Default settings applied to [DraggableDough] widgets.
   final DraggableDoughPrefs draggablePrefs;
 
-  /// Default settings applied to [GyroDough] widgets.
-  final GyroDoughPrefs gyroPrefs;
-
   /// Copies the current recipe with some new values.
   DoughRecipeData copyWith({
     double? viscosity,
@@ -168,7 +160,6 @@ class DoughRecipeData extends Equatable {
     Duration? exitDuration,
     Curve? exitCurve,
     DraggableDoughPrefs? draggablePrefs,
-    GyroDoughPrefs? gyroPrefs,
   }) {
     return DoughRecipeData.raw(
       viscosity: viscosity ?? this.viscosity,
@@ -181,7 +172,6 @@ class DoughRecipeData extends Equatable {
       exitDuration: exitDuration ?? this.exitDuration,
       exitCurve: exitCurve ?? this.exitCurve,
       draggablePrefs: draggablePrefs ?? this.draggablePrefs,
-      gyroPrefs: gyroPrefs ?? this.gyroPrefs,
     );
   }
 
@@ -197,7 +187,6 @@ class DoughRecipeData extends Equatable {
         exitDuration,
         exitCurve,
         draggablePrefs,
-        gyroPrefs,
       ];
 
   @override

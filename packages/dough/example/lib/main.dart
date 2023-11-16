@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:dough/dough.dart';
+import 'package:senseless_dough/dough.dart';
 
 import 'routes.dart';
 
@@ -52,10 +52,6 @@ class HomePage extends StatelessWidget {
       ListTile(
         title: Text('Draggable Dough'),
         onTap: () => nav.pushNamed(Routes.kDraggableDough),
-      ),
-      ListTile(
-        title: Text('Gyro Dough'),
-        onTap: () => nav.pushNamed(Routes.kGyroDoughDemo),
       ),
       Divider(),
       ListTile(

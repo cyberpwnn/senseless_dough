@@ -1,5 +1,5 @@
-import 'package:dough/dough.dart';
 import 'package:flutter/material.dart';
+import 'package:senseless_dough/dough.dart';
 
 class DoughRecipeDemo extends StatelessWidget {
   @override

@@ -1,3 +1,10 @@
+## [2.0.0] - Feb 7, 2023.
+
+- Initial fork of dough
+- Removed sensors dependency & gyro dough widget.
+
+---
+
 ## [1.0.4] - Feb 7, 2023.
 
 - Updated to support Flutter `3.7`.
